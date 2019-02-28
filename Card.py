@@ -7,6 +7,9 @@ class Card():
 	rank = ""
 
 	#Methods
+	def __init__(self):
+		pass
+		
 	def __init__(self, suit, rank):
 		self.suit = suit
 		self.rank = rank
