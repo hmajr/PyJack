@@ -5,21 +5,27 @@ from GlobalVar import RANKS
 class Deck():
 	"""Baralho de cartas"""
 	#ATTRIBUTES
-	cards = tuple()
+	cards = []
 	#METHODS
 	def __init__(self):
+		"""Generate deck of cards"""
 		for suit in SUITS:
 			for rank in RANKS:
-				self.cards += (rank,suit)
+				self.cards.append(Card(suit, rank)) 
 
-	def RetriveCard():
+	def print_deck(self):
+		for num in range(0, len(self.cards)):
+			print( self.cards[num] )
+
+	def retrieve_card(self):
 		pass
 
-	def Shuffle():
+	def shuffle(self):
 		pass
 
-	def IsEmpty():
+	def is_empty(self):
 		pass
 
 baralho = Deck()
-print(baralho.cards)
+baralho.print_deck()
+print(len(baralho.cards))
