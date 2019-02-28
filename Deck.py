@@ -1,6 +1,6 @@
+from random import shuffle
 from Card import Card 
-from GlobalVar import SUITS
-from GlobalVar import RANKS
+from GlobalVar import SUITS, RANKS
 
 class Deck():
 	"""Baralho de cartas"""
@@ -20,12 +20,19 @@ class Deck():
 	def retrieve_card(self):
 		pass
 
-	def shuffle(self):
-		pass
+	def shuffle_deck(self):
+		shuffle(self.cards)
+		self.cards.reverse()
+		shuffle(self.cards)
 
 	def is_empty(self):
 		pass
 
+
 baralho = Deck()
 baralho.print_deck()
 print(len(baralho.cards))
+print("\n\n")
+print("Shuffle deck!")
+baralho.shuffle_deck()
+baralho.print_deck()
