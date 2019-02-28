@@ -10,10 +10,11 @@ class Player():
 	def __init__(self, nome, chips):
 		self.nome = nome
 
-	def TakeOneCard():
+	def TakeOneCard(self):
 		pass
 
-	def FazerAposta():
+	def MakeBid(self):
 		pass
 
-	
+	def HandPoints(self):
+		pass
