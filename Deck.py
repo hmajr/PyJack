@@ -1,16 +1,16 @@
-import Card
+from Card import Card 
 from GlobalVar import SUITS
 from GlobalVar import RANKS
 
 class Deck():
 	"""Baralho de cartas"""
 	#ATTRIBUTES
-	cards = ("","")
+	cards = tuple()
 	#METHODS
 	def __init__(self):
 		for suit in SUITS:
 			for rank in RANKS:
-				cards += (x,y)
+				self.cards += (rank,suit)
 
 	def RetriveCard():
 		pass
@@ -20,3 +20,6 @@ class Deck():
 
 	def IsEmpty():
 		pass
+
+baralho = Deck()
+print(baralho.cards)
