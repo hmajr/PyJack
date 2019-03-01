@@ -12,6 +12,7 @@ class Deck():
 	"""
 	#ATTRIBUTES
 	cards = []
+	
 	#METHODS
 	def __init__(self):
 		"""Gera deck de cartas

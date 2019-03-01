@@ -1,7 +1,6 @@
 class Player():
 	"""Classe do jogador"""
 	#ATTRIBUTES
-	name = ""
 	chips = 0
 	hand = []
 
@@ -9,6 +8,7 @@ class Player():
 	#METHODS
 	def __init__(self, name, chips = 1000):
 		self.name = name
+		self.chips = chips
 
 	def take_one_card(self):
 		pass
@@ -17,4 +17,7 @@ class Player():
 		pass
 
 	def hand_points(self):
+		pass
+
+	def print_hand():
 		pass

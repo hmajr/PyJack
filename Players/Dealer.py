@@ -12,3 +12,8 @@ class Dealer(Player):
 		else:
 			pass
 			#stop
+	def print_partial_hand():
+		pass
+
+	def print_full_hand():
+		pass
