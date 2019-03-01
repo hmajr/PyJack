@@ -1,3 +1,13 @@
+"""Possui variáveis globais do jogo
+
+Attributes:
+    DEFAULT_CHIPS (int): quantidade padrão de fichas iniciais
+    playing (bool): loop principal do jogo
+    RANKS (tuple): ranking das cartas do baralho
+    SUITS (tuple): naipe das cartas do jogo
+    SUITS_UNICODE (dict): converte naipe em código unicode
+    VALUES (dict): converte ranking das cartas em valor no jogo
+"""
 import random
 
 #GLOBAL VARIABLES 
