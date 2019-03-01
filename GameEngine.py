@@ -1,10 +1,14 @@
 def init_game():
+	"""Iniciliza jogo, recebendo o nome, montando deck e embaralhando cartas
+	"""
 	pass
 	#recebe nome do jogador
 	#monta deck
 	#embaralha deck
 
 def loop_game():
+	"""Loop principal do jogo
+	"""
 	while playing:
 		pass
 		#recebe aposta
@@ -16,9 +20,25 @@ def loop_game():
 		#Dealer verifica pontuação
 			# < 17 : puxa carta
 			#>= 17 : encerra jogada
-		
 
-def nova_partida():
+def take_bet():
+	"""Recebe as apostas
+	"""
+	pass
+
+def hit(deck, hand):
+	"""
+	Retira carta do deck e adciona a mão do jogador atual.
+	Verifica mão < 21
+	
+	Args:
+	    deck (Deck Class): recebe baralho de cartas do jogo atual
+	    hand (Hand Class): recebe mão do jogador
+	"""
+
+def new_game():
+	"""Pergunta se deseja jogar novamente
+	"""
 	pass
 	#pergunta P1 jogar novamente
 		#N : PLAYING = FALSE
