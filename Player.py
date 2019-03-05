@@ -1,6 +1,8 @@
 from Chips import Chips
 from Hand import Hand
 
+# from Exception import Exception
+
 class Player():
 	"""Classe do jogador"""
 	#ATTRIBUTES
@@ -19,19 +21,19 @@ class Player():
 				bid = int(input("Qual a sua aposta? "))
 				if bid > self.chips.total:
 					print("")
-					raise OverQuantityError("Quantidade de fichas indisponível")
+					raise OverQuantityError()
 				elif bid == 0:
-					raise ZeroBidError("Aposta deve ser maior que 0")
+					raise ZeroBidError()
 				else: 
 					self.chips.bet = bid
 			except ValueError:
 				print("Insira um número inteiro")
 				continue
-			except QuantityError:
-				print(QuantityError)
+			except OverQuantityError:
+				print("Quantidade de fichas indisponível")
 				continue
 			except ZeroBidError:
-				print(ZeroBidError)
+				print("Aposta deve ser maior que 0")
 				continue
 			except :
 				print("Tente novamente!!!")
@@ -42,12 +44,12 @@ class Player():
 		self.hand.print_hand()
 
 #Player Exceptions
-class QuantityError():
+class OverQuantityError(Exception):
 	"""docstring for QuantityError"""
 	def __init__(self):
 		pass
-		
-class ZeroBidError():
+
+class ZeroBidError(Exception):
 	"""docstring for ZeroBidError"""
 	def __init__(self):
 		pass
