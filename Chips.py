@@ -15,12 +15,12 @@ class Chips():
 		self.total = DEFAULT_CHIPS
 		self.bet = 0
 
-	def win_bet():
+	def win_bet(self):
 		"""Soma fichas ganhas ao total
 		"""
-		pass
+		self.total += self.bet
 		
-	def lose_bet():
+	def lose_bet(self):
 		"""Subtrai fichas do total atual
 		"""
-		pass
+		self.total -= self.bet
