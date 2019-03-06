@@ -6,8 +6,8 @@ from Hand import Hand
 class Player():
 	"""Classe do jogador"""
 	#ATTRIBUTES
-	def __init__(self):
-		self.chips = Chips()
+	def __init__(self, chips = 0):
+		self.chips = Chips(chips)
 		self.hand = Hand()
 
 	#METHODS
