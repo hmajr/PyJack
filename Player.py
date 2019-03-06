@@ -11,8 +11,9 @@ class Player():
 		self.hand = Hand()
 
 	#METHODS
-	def take_one_card(self):
-		pass
+	def take_card(self, deck, num_cards = 1):
+		for num in range(0,num_cards):
+			self.hand.add_card(deck.deal())
 
 	def make_bid(self):
 		while True:
@@ -20,30 +21,29 @@ class Player():
 				print(f"Total de fichas: {self.chips.total}")
 				bid = int(input("Qual a sua aposta? "))
 				if bid > self.chips.total:
-					print("")
 					raise OverQuantityError()
 				elif bid == 0:
 					raise ZeroBidError()
 				else: 
 					self.chips.bet = bid
 			except ValueError:
-				print("Insira um número inteiro")
+				print("\nInsira um número inteiro")
 				continue
 			except OverQuantityError:
-				print("Quantidade de fichas indisponível")
+				print("\nQuantidade de fichas indisponível")
 				continue
 			except ZeroBidError:
-				print("Aposta deve ser maior que 0")
+				print("\nAposta deve ser maior que 0")
 				continue
-			except :
-				print("Tente novamente!!!")
 			else:
+				self.chips.bet = bid
 				break
 
-	def print_hand():
+	def print_hand(self):
+		print("\n=== PLAYER'S HAND ===\n")
 		self.hand.print_hand()
 
-#Player Exceptions
+#PLAYER EXCEPTIONS
 class OverQuantityError(Exception):
 	"""docstring for QuantityError"""
 	def __init__(self):
@@ -59,4 +59,6 @@ if __name__ == '__main__':
 	player = Player()
 
 	player.make_bid()
+
+	player.print_hand()
 
