@@ -103,6 +103,7 @@ if __name__ == '__main__':
 	  	# Show cards (but keep one dealer card hidden)
 		dealer.print_partial_hand()
 		player.print_hand()
+		print("PONTUACAO PLAYER: " + str(player.hand.hand_points()))
 
 
 	  	# recall this variable from our hit_or_stand function
@@ -113,6 +114,7 @@ if __name__ == '__main__':
 	  	    # Show cards (but keep one dealer card hidden)
 			dealer.print_partial_hand()
 			player.print_hand()
+			print("PONTUACAO PLAYER: " + str(player.hand.hand_points()))
 
 	   	   	# If player's hand exceeds 21, run player_busts() and break out of loop
 			if player.hand.hand_points() > 21:
@@ -122,19 +124,16 @@ if __name__ == '__main__':
 			while dealer.hand.hand_points() < 17:		
 				dealer.take_card(gameDeck)
   			    
-  			    # Show all cards
-				dealer.print_hand()
-				player.print_hand()
-					
-	    # Run different winning scenarios
-		# system("cls")
+	    # Show all cards
+		system("cls")
 		dealer.print_hand()
-		print(str(dealer.hand.hand_points()))
+		print("PONTUACAO DEALER: " + str(dealer.hand.hand_points()))
 
 		player.print_hand()
-		print(str(player.hand.hand_points()))
+		print("PONTUACAO PLAYER: " + str(player.hand.hand_points()))
 		TRASH = input()
 
+	    # Run different winning scenarios
 		if player.hand.hand_points() > 21:
 			player.chips.lose_bet()
 			player_busts()
@@ -149,7 +148,7 @@ if __name__ == '__main__':
 			dealer_wins()
 		elif player.hand.hand_points() == dealer.hand.hand_points():
 			push()
-
+		
 		
 	  	# Inform Player of their chips total 
 		print("TOTAL CHIPS: " + str(player.chips.total))

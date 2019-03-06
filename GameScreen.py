@@ -43,7 +43,7 @@ def player_busted_screen():
 	print("  \ // _ \| | | | | ___ \ | | / __| __/ _ \/ _` |")
 	print("  | | (_) | |_| | | |_/ / |_| \__ \ ||  __/ (_| |")
 	print("  \_/\___/ \__,_| \____/ \__,_|___/\__\___|\__,_|")
-	print("SE FODEO!!!!!!! YEEEEEL")
+	print("SE FODEO!!!!!!! YEEEEEL\n")
 
 def dealer_busted_screen():
 	print(" _____             _             ____            _           _ ")
