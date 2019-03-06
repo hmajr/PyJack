@@ -32,13 +32,12 @@ class Deck():
 		self.cards.reverse()
 		random.shuffle(self.cards)
 	
-	def deal():
+	def deal(self):
 		"""Retira carta do baralho
 		Returns:
 		    Card: carta do baralho
 		"""
-		pass
-		# return card
+		return self.cards.pop()
 
 
 #MY FUNCTIONS 
