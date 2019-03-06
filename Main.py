@@ -2,7 +2,7 @@ from GameScreen import *
 from Deck import Deck
 from Player import Player
 from Dealer import Dealer
-from GlobalVar import playing
+from GlobalVar import playing, DEFAULT_CHIPS
 from os import system
 
 #ACTIONS
@@ -71,13 +71,18 @@ class InvalidActionError(Exception):
 	def __init__(self):
 		pass
 
+
+"""GAME LOOP
+
+Main game loop
+"""
 if __name__ == '__main__':
 	"""Loop principal do jogo
 	"""
 	title_screen()
 
   	# Set up the Player's chips
-	player = Player()
+	player = Player(DEFAULT_CHIPS)
 	dealer = Dealer()
 
 	while True:
@@ -109,7 +114,10 @@ if __name__ == '__main__':
 			dealer.print_partial_hand()
 			player.print_hand()
 
-	   	   # If player's hand exceeds 21, run player_busts() and break out of loop
+	   	   	# If player's hand exceeds 21, run player_busts() and break out of loop
+			if player.hand.hand_points() > 21:
+				break
+
 		if player.hand.hand_points() < 21:
 			while dealer.hand.hand_points() < 17:		
 				dealer.take_card(gameDeck)
@@ -121,8 +129,12 @@ if __name__ == '__main__':
 	    # Run different winning scenarios
 		# system("cls")
 		dealer.print_hand()
+		print(str(dealer.hand.hand_points()))
+
 		player.print_hand()
-		
+		print(str(player.hand.hand_points()))
+		TRASH = input()
+
 		if player.hand.hand_points() > 21:
 			player.chips.lose_bet()
 			player_busts()
@@ -156,9 +168,13 @@ if __name__ == '__main__':
 		else:
 			if replay == "sim":
 				system("cls")
-				gameDeck.delete_deck()
 				player.hand.delete_hand()
 				dealer.hand.delete_hand()
+
+				#RESET CONDITIONALS STATES
+				playing = true
+				player = Player(player.chips.total)
+				dealer = Dealer()
 			elif replay == "nao":
 				thanks_playing_screen()
 				break
