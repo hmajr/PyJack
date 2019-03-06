@@ -5,12 +5,10 @@ class Dealer(Player):
 	def __init__(self):
 		super(Dealer, self).__init__()
 
-	def CheckHandPoints(self):
-		if self.HandPoints() < 17:
-			pass
-			#draw new card
-		else:
-			pass
-			#stop
-	def print_partial_hand():
+	def print_hand(self):
+		print("\n=== DEALER'S HAND ===\n")
+		self.hand.print_hand()
+
+	def print_partial_hand(self):
+		print("\n=== DEALER'S HAND ===\n")
 		self.hand.print_hand(1)
