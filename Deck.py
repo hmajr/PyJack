@@ -18,12 +18,12 @@ class Deck():
 	def __init__(self):
 		"""Gera deck de cartas
 		"""
-		if self.is_empty():
-			for suit in SUITS:
+		if not(self.is_empty()):
+			self.delete_deck()
+
+		for suit in SUITS:
 				for rank in RANKS:
-					self.cards.append(Card(suit, rank)) 
-		else:
-			print("Deck isn't empty")
+					self.cards.append(Card(suit, rank))
 
 	def shuffle_deck(self):
 		"""Embaralha cartas do baralho
