@@ -9,10 +9,10 @@ class Chips():
 	    bet (int): quantidade de aposta da rodada atual
 	    total (TYPE): total de fichas
 	"""
-	def __init__(self):
+	def __init__(self, chips):
 		"""Inicializa classe com valores padrões
 		"""
-		self.total = DEFAULT_CHIPS
+		self.total = chips
 		self.bet = 0
 
 	def win_bet(self):
