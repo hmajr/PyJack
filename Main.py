@@ -172,7 +172,7 @@ if __name__ == '__main__':
 				dealer.hand.delete_hand()
 
 				#RESET CONDITIONALS STATES
-				playing = true
+				playing = True
 				player = Player(player.chips.total)
 				dealer = Dealer()
 			elif replay == "nao":
